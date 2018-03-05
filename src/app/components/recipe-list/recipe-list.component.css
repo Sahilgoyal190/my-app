@@ -1,0 +1,28 @@
+h1 {
+    font-size: 160%;
+}
+.recipe {
+    float: left;
+    width: 97%;
+    margin: 10px 0;
+}
+
+@media (min-width: 800px) {
+    .recipe {
+        width: 500px;
+        margin: 10px 10px;
+    }
+}
+
+ 
+div.newrecipe {
+    max-width: 500px;
+}
+
+.darkbg {
+    background-color: #aaaaaa;
+}
+
+div.input-group {
+    margin: 10px 0;
+}
