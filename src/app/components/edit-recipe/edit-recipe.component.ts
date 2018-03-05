@@ -13,7 +13,7 @@ export class EditRecipeComponent {
 
   recipe_in_progress: Recipe;
 
-  constructor(private router: Router,,
+  constructor(private router: Router,
     private recipe_service: RecipeService) {
     this.recipe_in_progress = Recipe.createBlank();
   }
