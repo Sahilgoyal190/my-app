@@ -18,29 +18,18 @@ export class RecipeDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private location: Location, private recipe_service: RecipeService) {
-      this.recipe_service.getAllRecipes().then((recipes) => {
-        this.recipes = recipes;
-      })
   }
 
   ngOnInit(): void {
-    this.recipe = this.recipes[1];
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.recipe = this.findRecipeById(parseInt(params.get('id'), 10));
+      this.recipe_service.getRecipeById(parseInt(params.get('id'), 10)).then((recipe)=>{
+        this.recipe =recipe
+      })
     });
   }
 
-  findRecipeById(id: number): Recipe {
-    for (const recipe of this.recipes) {
-      if (recipe.id === id) {
-        return recipe;
-      }
-    }
-    return null;
-  }
 
   goBackButtonPressed(): void {
     this.location.back();
   }
-
 }
